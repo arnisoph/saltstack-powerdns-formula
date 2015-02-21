@@ -1,0 +1,19 @@
+kernel:
+  Linux:
+    recursor:
+      pkgs:
+        - pdns-recursor
+      config:
+        manage:
+          - main
+        main:
+          path: /etc/powerdns/recursor.conf
+      service:
+        name: pdns-recursor
+os_family:
+  Debian: {}
+  RedHat: {}
+  FreeBSD:
+    recursor:
+      pkgs:
+        - powerdns-recursor
