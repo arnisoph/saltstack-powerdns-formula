@@ -1,6 +1,6 @@
 #!jinja|yaml
 
-{% set datamap = salt['formhelper.get_defaults']('powerdns', saltenv, ['yaml'])['yaml'] %}
+{% set datamap = salt['formhelper.get_defaults']('powerdns', saltenv) %}
 
 include: {{ salt['pillar.get']('powerdns:lookup:recursor:sls_include', []) }}
 extend: {{ salt['pillar.get']('powerdns:lookup:recursor:sls_extend', '{}') }}
